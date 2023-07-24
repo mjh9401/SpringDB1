@@ -144,7 +144,7 @@ public class MemberRepositoryV4_1 implements MemberRepository{
         DataSourceUtils.releaseConnection(con,dataSource);
     }
 
-    private Connection getConnection() throws SQLException {
+    private Connection getConnection(){
         // 주의! 트랜잭션 동기화를 사용하려면 DataSourceUtils를 사용해야 한다.
         Connection con= DataSourceUtils.getConnection(dataSource);
         log.info("get connection ={}, class={}",con,con.getClass());
